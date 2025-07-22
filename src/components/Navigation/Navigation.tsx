@@ -1,35 +1,28 @@
-// src/components/Navigation/Navigation.tsx
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import {motion, AnimatePresence, type Variants} from 'framer-motion';
 import styles from './Navigation.module.scss';
 
-// Variants for the overall navigation menu container (mobile only)
-const navMenuVariants = {
+const navMenuVariants: Variants = {
     closed: {
         maxHeight: 0,
         opacity: 0,
         transition: {
             when: 'afterChildren',
             duration: 0.3,
-            ease: 'easeOut',
-            staggerChildren: 0.05,
-            staggerDirection: -1
+            ease: [0.42, 0, 0.58, 1]
         }
     },
     open: {
-        maxHeight: 500, // Adjust if needed
+        maxHeight: 500,
         opacity: 1,
         transition: {
             when: 'beforeChildren',
             duration: 0.35,
-            ease: [0.25, 0.1, 0.25, 1], // Apple-style ease
-            staggerChildren: 0.1,
-            staggerDirection: 1
+            ease: [0.25, 0.1, 0.25, 1]
         }
     }
 };
 
-// Variants for the individual navigation links
 const navLinkVariants = {
     closed: { x: -20, opacity: 0 },
     open: { x: 0, opacity: 1 }
@@ -86,6 +79,7 @@ const Navigation: React.FC = () => {
                             animate="open"
                             exit="closed"
                             variants={navMenuVariants}
+                            transition={{ staggerChildren: 0.1, staggerDirection: 1 }}
                             style={{ pointerEvents: isOpen ? 'auto' : 'none', overflow: 'hidden' }}
                         >
                             <motion.a href="#timeline" className={styles.navBtn} onClick={handleNavLinkClick} variants={navLinkVariants}>
