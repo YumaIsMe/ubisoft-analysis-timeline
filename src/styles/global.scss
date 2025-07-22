@@ -1,0 +1,32 @@
+/* src/styles/global.scss */
+
+@use 'utils/variables' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: $color-text-dark;
+  background: #232323;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Base container styling */
+.container {
+  max-width: $max-width-container;
+  margin: 0 auto;
+  padding: $spacing-xl $spacing-base;
+}
+
+.hidden {
+  display: none !important;
+}

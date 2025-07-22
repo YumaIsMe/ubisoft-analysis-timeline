@@ -1,0 +1,106 @@
+@use '../../styles/utils/variables' as *;
+
+.timelineItem {
+  display: flex;
+  margin-bottom: $spacing-lg;
+  border-radius: $border-radius-md;
+  opacity: 0;
+  animation: slideIn 0.6s ease forwards;
+
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+}
+
+.timelineContent {
+  background: $color-white;
+  padding: $spacing-md;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-lg;
+  width: 45%; // Original width
+  position: relative;
+  transition: $transition-base;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-hover;
+  }
+
+  h3 {
+    color: $color-secondary;
+    margin-bottom: $spacing-sm;
+    font-size: $font-size-md;
+    font-weight: 600;
+  }
+}
+
+.timelineDate {
+  color: $color-text-light;
+  font-size: $font-size-base;
+  margin-bottom: $spacing-sm;
+  font-weight: 500;
+}
+
+.timelineSummary {
+  color: #5d6d7e;
+  line-height: 1.6;
+}
+
+.timelineMarker {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  width: 20px;
+  height: 20px;
+  border-radius: $border-radius-circle;
+  z-index: 10;
+  border: 4px solid $color-white;
+  box-shadow: 0 0 0 4px $color-primary;
+}
+
+// Category-specific marker colors
+.category-financial .timelineMarker { box-shadow: 0 0 0 4px $color-accent-green; }
+.category-games .timelineMarker { box-shadow: 0 0 0 4px $color-primary; }
+.category-corporate .timelineMarker { box-shadow: 0 0 0 4px $color-accent-red; }
+.category-strategic .timelineMarker { box-shadow: 0 0 0 4px $color-accent-orange; }
+.category-media .timelineMarker { box-shadow: 0 0 0 4px $color-accent-purple; }
+.category-legal .timelineMarker { box-shadow: 0 0 0 4px $color-accent-brown; }
+
+.categoryBadge {
+  display: inline-block;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius-lg;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  margin-bottom: $spacing-sm;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+// Category-specific badge background and text colors
+.category-financial { background: #d5f4e6; color: $color-accent-green; }
+.category-games { background: #ddeeff; color: $color-primary; }
+.category-corporate { background: #fadbd8; color: $color-accent-red; }
+.category-strategic { background: #fdeaa7; color: $color-accent-orange; }
+.category-media { background: #e8daef; color: $color-accent-purple; }
+.category-legal { background: #fad7a0; color: $color-accent-brown; }
+
+// Left border for type (positive/negative/mixed/neutral)
+.type-positive { border-left: 4px solid $color-accent-green; }
+.type-negative { border-left: 4px solid $color-accent-red; }
+.type-mixed { border-left: 4px solid $color-accent-orange; }
+.type-neutral { border-left: 4px solid $color-text-light; }
+
+@media (max-width: 768px) {
+  .timelineItem {
+    flex-direction: column !important;
+  }
+
+  .timelineContent {
+    width: 100%;
+  }
+
+  .timelineMarker {
+    left: 20px;
+  }
+}

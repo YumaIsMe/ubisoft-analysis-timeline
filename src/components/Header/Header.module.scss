@@ -1,0 +1,28 @@
+@use '../../styles/utils/variables' as *;
+
+.header {
+  background: #595959;
+  color: $color-white;
+  padding: $spacing-lg $spacing-base;
+  text-align: center;
+  box-shadow: $shadow-md;
+}
+
+.title {
+  font-size: $font-size-xxl;
+  margin-bottom: $spacing-sm;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: $font-size-md;
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: $font-size-xl;
+  }
+}

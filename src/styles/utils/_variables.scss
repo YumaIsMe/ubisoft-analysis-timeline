@@ -1,0 +1,59 @@
+/* src/styles/_variables.scss */
+
+// Colors
+$color-primary: #000000;
+$color-primary-dark: #250505;
+$color-secondary: #007dd7;
+$color-secondary-dark: #5d397c;
+$color-accent-red: #e74c3c;
+$color-accent-green: #27ae60;
+$color-accent-orange: #f39c12;
+$color-accent-purple: #9b59b6;
+$color-accent-brown: #e67e22;
+$color-text-dark: #333;
+$color-text-light: #7f8c8d;
+$color-background-light: #f8f9fa;
+$color-white: white;
+$color-border-light: #ddd;
+$color-black: black;
+
+// Gradients
+$gradient-header: linear-gradient(135deg, $color-secondary 0%, $color-secondary-dark 100%);
+$gradient-timeline-line: linear-gradient(to bottom, $color-primary, $color-accent-red);
+$gradient-predictions: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-base: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 4rem;
+
+// Font Sizes
+$font-size-sm: 0.8rem;
+$font-size-base: 0.9rem;
+$font-size-md: 1.2rem;
+$font-size-lg: 1.5rem;
+$font-size-xl: 2rem;
+$font-size-xxl: 2.5rem;
+
+// Border Radius
+$border-radius-sm: 5px;
+$border-radius-md: 10px;
+$border-radius-lg: 15px;
+$border-radius-pill: 25px;
+$border-radius-circle: 50%;
+
+// Box Shadows
+$shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+$shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+$shadow-lg: 0 4px 15px rgba(0,0,0,0.1);
+$shadow-xl: 0 4px 15px rgba(0,0,0,0.2);
+$shadow-hover: 0 8px 25px rgba(0,0,0,0.15);
+
+// Max Widths
+$max-width-container: 1200px;
+
+// Transitions
+$transition-base: all 0.3s ease;

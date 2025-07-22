@@ -1,0 +1,121 @@
+/* src/components/Navigation/Navigation.module.scss */
+@use '../../styles/utils/variables' as *;
+
+
+.navContainer {
+  background: #595959;
+  padding: $spacing-base 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: $shadow-sm;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+}
+
+// Default (Desktop) Nav Styles - always block, flex-row
+.nav {
+  flex-grow: 1;
+  display: flex; // Always flex for desktop
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $spacing-base;
+  max-width: $max-width-container;
+  margin: 0 auto;
+  padding: 0 $spacing-base;
+}
+
+.navBtn {
+  padding: $spacing-sm $spacing-base;
+  background: $color-primary;
+  color: $color-white;
+  text-decoration: none;
+  border-radius: $border-radius-sm;
+  transition: $transition-base;
+  font-weight: 500;
+  white-space: nowrap;
+
+  &:hover {
+    background: $color-primary-dark;
+    transform: translateY(-2px);
+  }
+}
+
+// Burger Menu Button Styles (Hidden by default on desktop)
+.burgerMenuButton {
+  display: none; // Hidden on desktop
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-sm;
+  position: absolute;
+  right: $spacing-base;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 101;
+
+  .burgerLine {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: $color-white;
+    margin: 4px 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &.open {
+    .burgerLine:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .burgerLine:nth-child(2) {
+      opacity: 0;
+    }
+    .burgerLine:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+
+// Mobile-specific layout and overrides
+@media (max-width: 768px) {
+  .navContainer {
+    justify-content: space-between;
+    padding: $spacing-base;
+  }
+
+  .burgerMenuButton {
+    display: block; // Show burger button on mobile
+  }
+
+  .nav {
+    // --- Framer Motion will animate these properties ---
+    // height, opacity, transform (implicit via y in variants), pointer-events
+    // max-height (if using fixed height), overflow
+    // --- End Framer Motion controlled properties ---
+
+    display: flex; // Ensure it's a flex container for column layout
+    flex-direction: column; // Stack links vertically
+    position: absolute; // Position for overlay
+    top: 100%; // Below the header
+    left: 0;
+    width: 100%;
+    background: #595959;
+    padding: $spacing-base 0;
+    box-shadow: $shadow-md;
+    // Make sure this is initially hidden by default
+    // Framer motion `height: 0, opacity: 0` will handle this.
+  }
+
+  // This class is no longer needed to control the animation,
+  // as Framer Motion's `animate="open"` handles it.
+  // The `isOpen ? styles.open : ''` is now only relevant for the burger icon animation.
+  // .nav.open { /* No longer needed for menu animation logic */ }
+
+  .navBtn {
+    text-align: center;
+    width: calc(100% - ($spacing-base * 2));
+    margin: $spacing-sm auto;
+  }
+}

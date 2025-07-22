@@ -1,0 +1,17 @@
+@use '../../styles/utils/variables' as *;
+
+.analysisSection {
+  background: $color-black;
+  padding: $spacing-lg;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-lg;
+  margin: $spacing-lg 0;
+  color: $color-white;
+
+  h2 {
+    color: $color-secondary;
+    margin-bottom: $spacing-base;
+    padding-bottom: $spacing-sm;
+    border-bottom: 2px solid $color-primary;
+  }
+}

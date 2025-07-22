@@ -1,0 +1,24 @@
+@use '../../styles/utils/variables' as *;
+
+.yearSection {
+  margin-bottom: $spacing-xl;
+}
+
+.yearHeader {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+  position: relative;
+}
+
+.yearTitle {
+  display: inline-block;
+  background: $color-white;
+  color: $color-black;
+  padding: $spacing-base $spacing-lg;
+  border-radius: 50px;
+  font-size: $font-size-lg;
+  font-weight: 700;
+  box-shadow: $shadow-xl;
+  position: relative;
+  z-index: 10;
+}

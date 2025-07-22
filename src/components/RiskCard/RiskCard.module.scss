@@ -1,0 +1,14 @@
+@use '../../styles/utils/variables' as *;
+
+.riskCard {
+  background: $color-white;
+  padding: $spacing-md;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-lg;
+  border-left: 4px solid $color-accent-red; // Default for high risk
+  color: $color-black;
+
+  &.high { border-color: $color-accent-red; }
+  &.medium { border-color: $color-accent-orange; }
+  &.low { border-color: $color-accent-green; }
+}
