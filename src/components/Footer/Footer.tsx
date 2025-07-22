@@ -5,7 +5,7 @@ import styles from './Footer.module.scss';
 const Footer: React.FC = () => {
     return (
         <footer className={styles.footer}>
-            <p>&copy; 2025 Analysis of Ubisoft. All rights reserved.</p>
+            <p>&copy; 2025 Independent Analysis of Ubisoft. All rights reserved.</p>
             <p>Disclaimer: This analysis is for illustrative and fictional purposes, though it draws upon publicly available data sources for its foundation.</p>
         </footer>
     );
